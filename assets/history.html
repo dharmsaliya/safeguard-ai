@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient History - SafeGuard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>📂 Patient Incident History</h1>
+        
+        <div style="margin-bottom: 20px;">
+            <a href="index.html" class="nav-btn">⬅️ Back to Dashboard</a>
+            <button onclick="clearHistory()" class="nav-btn" style="background:#b71c1c;">🗑️ Clear Records</button>
+        </div>
+
+        <div class="card">
+            <div class="profile-box">
+                <div><div class="stat-label">Total Incidents</div><div class="stat-value" id="total-incidents">0</div></div>
+                <div><div class="stat-label">Last Incident</div><div class="stat-value" id="last-incident">--</div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>Date & Time</th>
+                        <th>Type</th>
+                        <th>Impact (G)</th>
+                        <th>Posture</th>
+                        <th>Temp</th>
+                    </tr>
+                </thead>
+                <tbody id="history-list">
+                    </tbody>
+            </table>
+            <div id="no-data" style="padding:20px; color:#666; display:none;">No incidents recorded.</div>
+        </div>
+    </div>
+
+    <script src="history.js"></script>
+</body>
+</html>

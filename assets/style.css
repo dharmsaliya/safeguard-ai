@@ -1,0 +1,244 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    transition: filter 0.3s;
+}
+
+.card {
+    background: #2d2d2d;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#main-status {
+    font-size: 3em;
+    font-weight: 800;
+    margin: 10px 0;
+    color: #4CAF50;
+}
+
+/* 🚨 THE 911 OVERLAY 🚨 */
+#alarm-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #b71c1c;
+    z-index: 9999;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: flash 0.5s infinite alternate;
+}
+
+#alarm-header {
+    font-size: 3em;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+/* Diagnostics Row */
+.diag-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.diag-item {
+    text-align: center;
+    min-width: 100px;
+}
+
+.diag-label {
+    color: #ccc;
+    font-size: 0.8em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.diag-val {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* QR Code & Timer */
+#qr-section {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+#qr-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 15px 0;
+    width: 220px;
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#timer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#countdown {
+    font-size: 8em;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0 40px;
+    border-radius: 20px;
+    margin: 20px 0;
+}
+
+#btn-cancel {
+    background: white;
+    color: #b71c1c;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* ✈️ FLIGHT RECORDER LOG */
+#log-container {
+    background: #000;
+    border: 1px solid #333;
+    height: 150px;
+    overflow-y: auto;
+    padding: 10px;
+    text-align: left;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.log-entry {
+    border-bottom: 1px solid #222;
+    padding: 5px 0;
+    color: #888;
+}
+
+.log-time {
+    color: #00d2be;
+    margin-right: 10px;
+}
+
+.log-alert {
+    color: #ff4444;
+    font-weight: bold;
+}
+
+.log-info {
+    color: #4CAF50;
+}
+
+.profile-box {
+    display: flex;
+    justify-content: space-around;
+    background: #333;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.stat-label {
+    color: #aaa;
+    font-size: 0.9em;
+}
+
+.stat-value {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #00bcd4;
+}
+
+button.calib {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+@keyframes flash {
+    from {
+        background-color: #b71c1c;
+    }
+
+    to {
+        background-color: #8b0000;
+    }
+}
+
+/* ... [Keep all existing CSS from the previous response] ... */
+
+/* --- NEW STYLES FOR HISTORY PAGE --- */
+
+/* Navigation Button Style */
+.nav-btn {
+    display: inline-block;
+    background: #444;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-right: 10px;
+}
+.nav-btn:hover { background: #555; }
+
+/* History Table Styles */
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+.history-table th {
+    background: #333;
+    padding: 12px;
+    color: #00d2be;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    letter-spacing: 1px;
+}
+.history-table td {
+    padding: 12px;
+    border-bottom: 1px solid #444;
+    font-size: 0.95em;
+    color: #ddd;
+}
+.history-table tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeGuard AI - Medical Recorder</title>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.4/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="alarm-overlay">
+        <div id="alarm-header">⚠️ FALL DETECTED</div>
+        <div class="diag-row">
+            <div class="diag-item"><div class="diag-label">IMPACT</div><div class="diag-val" id="d-impact">0.0 G</div></div>
+            <div class="diag-item"><div class="diag-label">POSTURE</div><div class="diag-val" id="d-posture">Unknown</div></div>
+            <div class="diag-item"><div class="diag-label">SKIN TEMP</div><div class="diag-val" id="d-temp" style="color: yellow;">-- °C</div></div>
+        </div>
+        <div id="timer-section">
+            <div style="font-size: 1.2em;">CONTACTING EMERGENCY SERVICES IN</div>
+            <div id="countdown">10</div>
+            <button id="btn-cancel" onclick="cancelAlarm()">I'M OK - CANCEL</button>
+        </div>
+        <div id="qr-section">
+            <div style="font-size: 1.5em; font-weight: bold; margin-bottom: 10px;">🚑 ALERT SENT</div>
+            <div id="qr-container"><div id="qrcode"></div><div style="color:black; font-weight:bold; margin-top:5px; font-size:0.9em;">SCAN MEDICAL REPORT</div></div>
+            <button id="btn-cancel" onclick="cancelAlarm()">CLOSE & RESET</button>
+        </div>
+    </div>
+
+    <div class="container" id="main-ui">
+        <h1>🛡️ SafeGuard AI + BioMetric</h1>
+
+        <div style="margin-bottom: 20px;">
+            <a href="history.html" class="nav-btn">📂 View Patient History</a>
+        </div>
+
+        <div class="card">
+            <div id="main-status">NORMAL</div>
+            <p>Protection Status: <span style="color:#00d2be">Active</span></p>
+        </div>
+
+        <div class="card">
+            <div class="profile-box">
+                <div><div class="stat-label">User Profile</div><div class="stat-value" id="user-profile">Default</div></div>
+                <div><div class="stat-label">Sensitivity</div><div class="stat-value" id="sensitivity-val">65%</div></div>
+            </div>
+            <button class="calib" id="btn-calibrate" onclick="startCalibration()">⚙️ Calibrate User</button>
+            <p id="calib-msg" style="color: #00d2be; display:none; margin-top:5px;">Learning gait... please walk.</p>
+        </div>
+
+        <div class="card">
+            <canvas id="sensorChart"></canvas>
+        </div>
+
+        <div class="card">
+            <div style="text-align:left; font-weight:bold; margin-bottom:5px;">📝 INCIDENT BLACK BOX</div>
+            <div id="log-container"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

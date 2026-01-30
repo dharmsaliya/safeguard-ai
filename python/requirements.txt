@@ -1,0 +1,2 @@
+numpy
+ai-edge-litert

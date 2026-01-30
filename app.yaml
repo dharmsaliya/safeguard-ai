@@ -1,0 +1,7 @@
+name: Fall Detection 2.0
+description: Real-time Accelerometer data visualization and movement detection using Modulino Movement sensor
+ports: []
+bricks:
+- arduino:web_ui: {}
+- arduino:motion_detection: {}
+icon: 🫢
