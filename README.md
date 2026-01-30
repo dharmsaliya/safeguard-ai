@@ -3,7 +3,7 @@
 
 **SafeGuard AI** is an edge-based biometric monitoring system built on the Arduino UNO Q. It leverages TinyML using TensorFlow Lite to detect fall events in real time and automatically initiate emergency response actions via the Twilio API. The system incorporates a smart calibration mechanism that adapts sensitivity based on the user’s gait and includes a complete end-to-end model training pipeline.
 
-![Project Banner](SafeGuard-AI/assets/docs_assets/launch-app.png)
+![Project Banner](assets/SafeGuard-AI-banner.png)
 
 ---
 
