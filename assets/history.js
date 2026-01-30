@@ -25,7 +25,7 @@ function loadHistory() {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>${item.date}</td>
-            <td style="color: #ff4444; font-weight:bold;">${item.type}</td>
+            <td><span class="incident-type">${item.type}</span></td>
             <td>${item.impact} G</td>
             <td>${item.posture}</td>
             <td>${item.temp} °C</td>

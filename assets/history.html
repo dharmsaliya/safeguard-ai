@@ -3,41 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patient History - SafeGuard</title>
+    <title>Patient History - SafeGuard AI</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="container">
-        <h1>📂 Patient Incident History</h1>
-        
-        <div style="margin-bottom: 20px;">
-            <a href="index.html" class="nav-btn">⬅️ Back to Dashboard</a>
-            <button onclick="clearHistory()" class="nav-btn" style="background:#b71c1c;">🗑️ Clear Records</button>
-        </div>
-
-        <div class="card">
-            <div class="profile-box">
-                <div><div class="stat-label">Total Incidents</div><div class="stat-value" id="total-incidents">0</div></div>
-                <div><div class="stat-label">Last Incident</div><div class="stat-value" id="last-incident">--</div></div>
+        <div class="header-section">
+            <h1>Patient Incident History</h1>
+            <p class="header-subtitle">Complete record of all detected incidents and alerts</p>
+            
+            <div style="margin-bottom: 1.5rem;">
+                <a href="index.html" class="nav-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="19" y1="12" x2="5" y2="12"/>
+                        <polyline points="12 19 5 12 12 5"/>
+                    </svg>
+                    Back to Dashboard
+                </a>
+                <button onclick="clearHistory()" class="nav-btn danger">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="3 6 5 6 21 6"/>
+                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                    </svg>
+                    Clear All Records
+                </button>
             </div>
         </div>
 
+        <!-- Statistics Cards -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Total Incidents</div>
+                <div class="stat-value" id="total-incidents">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Last Incident Date</div>
+                <div class="stat-value" id="last-incident" style="font-size: 1.25rem;">--</div>
+            </div>
+        </div>
+
+        <!-- History Table -->
         <div class="card">
             <table class="history-table">
                 <thead>
                     <tr>
                         <th>Date & Time</th>
-                        <th>Type</th>
-                        <th>Impact (G)</th>
-                        <th>Posture</th>
-                        <th>Temp</th>
+                        <th>Incident Type</th>
+                        <th>Impact Force</th>
+                        <th>Body Posture</th>
+                        <th>Temperature</th>
                     </tr>
                 </thead>
                 <tbody id="history-list">
-                    </tbody>
+                </tbody>
             </table>
-            <div id="no-data" style="padding:20px; color:#666; display:none;">No incidents recorded.</div>
+            <div id="no-data">No incidents have been recorded yet.</div>
         </div>
     </div>
 

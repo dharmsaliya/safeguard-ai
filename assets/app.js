@@ -89,9 +89,9 @@ function triggerAlarm(impact, posture, temp) {
         body: JSON.stringify({ impact: impact, temp: temp })
       }).then(res => res.json()).then(data => {
         if (data.status === 'success') {
-          addLog("✅ VOICE CALL CONNECTED", "info");
+          addLog("VOICE CALL CONNECTED", "info");
         } else {
-          addLog("❌ CALL FAILED: " + data.msg, "alert");
+          addLog("CALL FAILED: " + data.msg, "alert");
         }
       });
       // --------------------------------
